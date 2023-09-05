@@ -1,0 +1,85 @@
+.container-carousel-ul, .container-carousel-il {
+  list-style: none;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  padding-left: 0px;
+}
+
+.container-carousel-il {
+  display: inline;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover;  */
+  }
+
+/* Main container */
+
+.main-container {
+    margin-top: 2rem !important;
+    width: 100%;
+    height: 670px;
+    margin: 0 auto;
+  }
+
+/* Slider container */
+.slider-container {
+  position: relative;
+  height: 100%
+}
+
+/* dots carrusel */
+.dots-container {
+  display: flex;
+  justify-content: center;
+}
+
+.dot-container-item {
+  margin: 8px 3px;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  height: 0.625rem;
+  width: 0.625rem;
+  border: 1px solid #000;
+  background-color: transparent;
+  outline: 0;
+  border-radius: 50%;
+}
+
+/* Ajusta la posición de las flechas */
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-weight: 700;
+  color: #292929;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.leftArrow {
+  left: 35px;
+}
+
+.rightArrow {
+  right: 35px;
+}
+
+.container-images {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 20px; */
+  /* border: 1px solid #bbbbbb3f; */
+  overflow: hidden;
+}
+
+div.active {
+  background: #000;
+  border-radius: 50%;
+}
