@@ -1,69 +1,41 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { data } from './data';
+import React, {useState} from 'react';
+import { data } from '../../images';
 import './Carousel.css';
 
 export const Carousel: React.FC = () => {
-  const listRef = useRef<HTMLUListElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  useEffect(() => {
-    const listNode = listRef.current;
-
-    if (listNode) {
-      const imgNode = listNode.querySelectorAll("li > img")[currentIndex];
-
-      if (imgNode) {
-        imgNode.scrollIntoView({
-          behavior: "smooth"
-        });
-      }
-    }
-  }, [currentIndex]);
-
-  const scrollToImage = (direction: 'prev' | 'next') => {
-    if (direction === 'prev') {
-      setCurrentIndex(curr => {
-        const isFirstSlide = curr === 0;
-        return isFirstSlide ? data.length - 1 : curr - 1;
-      });
-    } else {
-      setCurrentIndex(curr => (curr + 1) % data.length);
-    }
-  };
-  
-
-  const goToSlide = (slideIndex: number) => {
+    const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
 
   return (
-    <div className="main-container">
-      <div className="slider-container">
-        <div className='leftArrow' onClick={() => scrollToImage('prev')}>&#10094;</div>
-        <div className='rightArrow' onClick={() => scrollToImage('next')}>&#10095;</div>
-        <div className="container-images">
-          <ul className='container-carousel-ul' ref={listRef}>
-            {
-              data.map((item) => {
-                return <li className='container-carousel-il' key={item.id}>
-                  <img className='carousel-img' src={item.imgUrl}/>
-                </li>
-              })
-            }
-          </ul>
+    <div >
+      <div id="carouselExampleDark" className="carousel carousel-dark slide">
+        <div className="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="custom-indicator active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" className="custom-indicator" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" className="custom-indicator" aria-label="Slide 3"></button>
         </div>
-        <div className="dots-container">
-            {data.map((_, idx) => (
-                <div
-                key={idx}
-                className={`dot-container-item ${idx === currentIndex ? "active" : ""}`}
-                onClick={() => goToSlide(idx)}
-                >
-                
-                </div>
-            ))}
+        <div className="carousel-inner">
+          <div className="carousel-item active" data-bs-interval="10000">
+            <img src={data[5].imgUrl} className="d-block w-100" alt="..." />
+          </div>
+          <div className="carousel-item" data-bs-interval="2000">
+            <img src={data[6].imgUrl} className="d-block w-100" alt="..."/>
+          </div>
+          <div className="carousel-item">
+            <img src={data[7].imgUrl} className="d-block w-100" alt="" /> 
+          </div>
         </div>
-
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev" >
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden" >Next</span>
+        </button>
       </div>
     </div>
   );

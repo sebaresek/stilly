@@ -20,6 +20,7 @@
   letter-spacing: -1.5px;
   margin: 0;
   margin-bottom: 15px;
+  font-size: 2rem;
 }
 
 .login-title {
@@ -154,8 +155,25 @@
   border-radius: 10px;
   border: none;
   padding: 12px 15px;
-  margin: 8px 0;
+  margin: 4px 0;
   width: 100%;
+  font-size: 14px;
+}
+
+.login-input::placeholder{
+  font-size: 13px;
+}
+
+.login-input-3::placeholder{
+  font-size: 13px;
+}
+
+.login-input-4::placeholder{
+  font-size: 13px;
+}
+
+.login-input-2::placeholder{
+  font-size: 13px;
 }
 
 .login-input-2{
@@ -166,6 +184,7 @@
   margin: 8px 1px;
   width: 49%;
   flex-direction: row;
+  font-size: 14px;
 }
 
 .login-input-3{
@@ -174,8 +193,9 @@
   border: none;
   padding: 12px 15px;
   margin: 8px 1px;
-  width: 55%;
+  width: 50%;
   flex-direction: row;
+  font-size: 14px;
 }
 
 .login-input-4{
@@ -184,8 +204,9 @@
   border: none;
   padding: 12px 15px;
   margin: 8px 0;
-  width: 44%;
+  width: 49%;
   flex-direction: row;
+  font-size: 14px;
 }
 
 

@@ -1,0 +1,49 @@
+{
+  "name": "REMERA CALAVERA SERPIENTE",
+  "description": "REMERA DE ALGODÓN MODELO CALAVERA HOZ COLORES AZUL",
+  "gender": "masculino",
+  "category": "Remera",
+  "price": "$ 6.000",
+  "waist": "L",
+  "color": "Negro",
+  "sleeve": "Corta",
+  "offer": false,
+  "image": [
+    "https://www.tradicional13.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/c/a/calavera_hoz_remera_hombre_negro.jpg",
+    "https://www.tradicional13.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/c/a/calavera_hoz_remera_hombre_negro_2.jpg"
+  ]
+}
+
+
+
+{
+  "name": "MEDIA VIRGEN",
+  "description": "Medias de Algodón modelo Virgen colores Negro,Blanco talles U",
+  "gender": "unisex",
+  "category": "medias",
+  "price": "$ 2.400",
+  "waist": "U",
+  "color": "Negro",
+  "sleeve": "null",
+  "offer": false,
+  "image": [
+    "https://www.tradicional13.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/v/i/virgen_medias_unisex_negro.jpeg"
+  ]
+}
+
+
+{
+  "name": "REMERA CALAVERA SERPIENTE",
+  "description": "REMERA DE ALGODÓN MODELO CALAVERA HOZ COLORES AZUL",
+  "gender": "femenino",
+  "category": "Remera",
+  "price": "$ 6.000",
+  "waist": "L",
+  "color": "Negro",
+  "sleeve": "Corta",
+  "offer": true,
+  "image": [
+    "https://www.tradicional13.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/m/e/medusa_remera_mujer_negro.jpg",
+    "https://www.tradicional13.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/m/e/medusa_remera_mujer_negro_2.jpg"
+  ]
+}

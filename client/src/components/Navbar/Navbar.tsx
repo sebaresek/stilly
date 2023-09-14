@@ -1,10 +1,8 @@
+import React from 'react';
+import axios from 'axios';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-// import logo from '../../assets/Stilly.png';
-// import image from '../../assets/image.gif';
-
-// Luego puedes usar 'image' en tu código
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 
 interface NavbarProps {
@@ -13,6 +11,53 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({isLoggedIn}) => {
   const [isFocused, setIsFocused] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate(); 
+
+
+
+  const onSearch = async (searchQuery: string) => {
+    try {
+      const URL = `http://localhost:3001/clothing/search?name=${searchQuery}`;
+      const response = await axios.get(URL);
+      const searchData = response.data;
+      console.log('Respuesta de Axios:', searchData);
+
+      if (searchData.length === 0) {
+        console.log('No se encontraron prendas con ese nombre.');
+      } else {
+        console.log('::::::::::::::::', searchData)
+        // Navega a la página de resultados y pasa los resultados como estado
+        navigate('/results', { state: { results: searchData } });
+      }
+    } catch (error: any) {
+      console.error('Error al obtener datos:', error);
+      if (error.response && error.response.status === 404) {
+        console.log('La URL solicitada no fue encontrada en el servidor.');
+      } else {
+        console.log('Ocurrió un error al realizar la solicitud.');
+      }
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    console.log(searchQuery)
+  };
+
+  const handleKeyPress  = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSearch(searchQuery); 
+    }
+  };
+
+  useEffect(() => {
+    // Esta función se ejecutará cada vez que searchQuery se actualice
+    console.log(searchQuery);
+  }, [searchQuery]);
+  
+
+
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -32,10 +77,17 @@ export const Navbar: React.FC<NavbarProps> = ({isLoggedIn}) => {
 
                 <div className='container-searchbar'>
                   <div
-                    className={`container-searchbar-3 ${
-                      isFocused ? 'focused' : ''
-                    }`}>
-                    <input className='container-input-navbar' type="text" placeholder="¿Qué estás buscando?" autoComplete="off" id="input-searchbar" onFocus={handleFocus} onBlur={handleBlur} />
+                    className='container-searchbar-3'>
+                    <input className='container-input-navbar' 
+                      type="text" placeholder="¿Qué estás buscando?" 
+                      onChange={handleInputChange}
+                      value={searchQuery}
+                      onKeyPress={handleKeyPress} // Llama a onSearch cuando se presiona "Enter"
+                      autoComplete="off" 
+                      id="input-searchbar" 
+                      onFocus={handleFocus} 
+                      onBlur={handleBlur} 
+                    />
                     <span className='container-span-navbar'>
                       <div className='container-span-navbar-2'>
                         <button className='searchbar-button' type='button'>
@@ -121,7 +173,7 @@ export const Navbar: React.FC<NavbarProps> = ({isLoggedIn}) => {
                   </a>
                 </li>
                 <li className='categorias-navbar-li'> 
-                  <a href="/kids" className='categorias-navbar-li-div-a'>
+                  <a href="/accessories" className='categorias-navbar-li-div-a'>
                     <div className='categorias-navbar-li-div-a-div-generico'>
                       ACCESORIOS
                     </div>

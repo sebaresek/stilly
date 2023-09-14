@@ -1,0 +1,52 @@
+/* Estilos para el contenedor principal */
+.about-us-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-transform: uppercase;
+    font-family: Montserrat,sans-serif;
+    box-sizing: inherit;
+  }
+  
+  /* Estilos para los títulos (h1 y h2) */
+  .about-us-container h1, .about-us-container h2 {
+    color: #333;
+  }
+  
+  .about-us-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-container h2 {
+    font-size: 20px;
+    margin-top: 50px;
+    text-align: left;
+  }
+  
+  /* Estilos para el texto del párrafo */
+  .about-us-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    text-align: justify;
+  }
+  
+  /* Estilos para la lista de valores fundamentales */
+  .about-us-container .value-list {
+    list-style-type: disc;
+    /* margin-left: 5px; */
+  }
+  
+  /* Estilos para los elementos de la lista */
+  .about-us-container .value-list li {
+    margin-bottom: 8px;
+    color: #666;
+    text-align: left;
+  }
+  
+  /* Estilos para el agradecimiento final */
+  .about-us-container p.thank-you {
+    margin-top: 20px;
+  }
+  

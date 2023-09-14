@@ -61,6 +61,7 @@
 
 .container-input-navbar{
     display: inline-block;
+    background-color: #fff;
     color: #666;
     border-radius: 15px;
     font-family: Montserrat,sans-serif;
@@ -74,11 +75,11 @@
     border-width: 0;
     -webkit-font-smoothing: antialiased;
     overflow: visible;
+    width: 100%;
 }
 
 .container-input-navbar:focus {
     outline: none; 
-    width: 100%;
 }
 
 .container-navbar.focused .container-searchbar-3 {
@@ -179,7 +180,6 @@
 }
 
 .container-img-img{
-    background-image: url('../../assets/Stilly.png');
     width: 100%;
     height: 100%;
 }
@@ -355,6 +355,10 @@
     z-index: 999;
     position: sticky;
     -webkit-box-direction: normal;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.041), 
+    0 10px 10px rgba(0, 0, 0, 0.041);
 }
 
 .categorias-navbar-2{

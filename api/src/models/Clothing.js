@@ -1,4 +1,5 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, Validator } = require('sequelize');
+
 
 module.exports = (sequelize) => {
   const Clothing = sequelize.define('Clothing', {
@@ -12,12 +13,32 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    category: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false
     },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isIn: {
+          args: [['masculino', 'femenino', 'unisex']],
+          msg: 'El género debe ser "masculino", "femenino" o "unisex"',
+        },
+      },
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isIn: {
+          args: [['remeras', 'musculosas', 'shorts', 'pantalones', 'buzos', 'camperas', 'medias', 'gorras', 'pilusos']],
+          msg: 'La categoria debe ser "remeras", "musculosas", "shorts", "pantalones", "buzos", "camperas", "medias", "gorras", "pilusos" ',
+        },
+      },
+    },
     price: {
-      type: DataTypes.DECIMAL(10, 2),
+      type: DataTypes.STRING,
       allowNull: false
     },
     waist: {  //talle
@@ -32,8 +53,18 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull:false
     },
+    offer: { //oferta
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      validate: {
+        isIn: {
+          args: [[true, false]],
+          msg: 'El campo "oferta" debe ser true o false',
+        },
+      },
+    },
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,// Cambiar de STRING a TEXT
       allowNull: false
     }
   },{ timestamps: false });

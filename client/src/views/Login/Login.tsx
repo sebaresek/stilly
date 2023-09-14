@@ -246,7 +246,7 @@ export const Login: React.FC<LoginProps> = ({ setIsLoggedIn }) => {
 
                 <input 
                   className='login-input-4' 
-                  type='number'
+                  type='text'
                   name="postalCode" 
                   placeholder="Codigo Postal" 
                   autoComplete='off'

@@ -1,4 +1,5 @@
 import './Promotions.css'
+import React from 'react';
 
 export const Promotions = () => {
 
