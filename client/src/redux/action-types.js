@@ -4,3 +4,6 @@ export const NEXT_PAGE = 'NEXT_PAGE';
 export const PREV_PAGE = "PREV_PAGE";
 export const HANDLE_NUMBER = "HANDLE_NUMBER"
 export const LOAD_DATA = "LOAD_DATA"
+export const FILTER_BY_COLOR = "FILTER_BY_COLOR"
+export const FILTER_BY_WAIST = "FILTER_BY_WAIST"
+export const CHANGE_ORDER = 'CHANGE_ORDER';

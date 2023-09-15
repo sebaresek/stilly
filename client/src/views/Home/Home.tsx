@@ -25,7 +25,7 @@ interface ClothingItem {
 
 export const Home = () => {
     const [characters, setCharacters] = useState<ClothingItem[]>([]);
-    const firstFourCharacters = characters.slice(0, 4);
+    const firstFourCharacters = characters.slice(0, 3);
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -42,7 +42,7 @@ export const Home = () => {
     return ( 
         <div>
             <Carousel/>
-            <div className='container-cards'>
+            <div className='container-cards-home'>
            {
               firstFourCharacters.map(item => (
                 <Card

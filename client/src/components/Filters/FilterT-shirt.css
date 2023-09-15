@@ -1,0 +1,540 @@
+.container-filter {
+    width: 20%;
+    height: auto;
+    background: #f2f2f256;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #73747742;
+    border-radius: 5px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.041), 
+    0 10px 10px rgba(0, 0, 0, 0.041);
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+  
+.container-filter h3{
+    display: flex;
+    margin-top: .5rem;
+    padding-left: 1rem;
+    font-size: 22px;
+}
+
+.container-filter h5{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    padding-left: 1rem;
+    text-align: center;
+    align-items: center;
+    margin-top: .5rem;
+    margin-bottom: 0px;
+    font-size: 16px;
+    background: #dbdadadc;
+}
+
+
+
+/* ********************* BUTTON */
+.button-filter {
+    position: relative;
+    width: 94%;
+    font-size: 14px;
+    letter-spacing: 3px;
+    height: 3em;
+    padding: 0 3em;
+    border: none;
+    background-color: #c41b54;
+    color: #fff;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 0 auto; 
+    /* margin-bottom: 0px; */
+  }
+  
+   
+   .button-filter::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    height: 0px;
+    width: 100%;
+    background: rgb(196,27,84);
+    background: linear-gradient(90deg, rgba(196,27,84,1) 20%, rgba(124,7,46,1) 100%);
+    transition: 0.2s;
+   }
+   
+   .button-filter .label {
+    position: relative;
+   }
+   
+   .button-filter .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+    width: 3em;
+    position: absolute;
+    top: 3em;
+    right: 0;
+    opacity: 0;
+    transition: 0.4s;
+   }
+   
+   .button-filter:hover::before {
+    height: 100%;
+   }
+   
+   .button-filter:hover .icon {
+    top: 0;
+    opacity: 1;
+   }
+
+
+  /* ****** CHECKLIST TALLES ********/
+  .checklist-talles{
+    --background: #f2f2f256;
+    --text: #5d6474;
+    --check: #7c0717;
+    --disabled: #d3c8de;
+    --width: 100%;
+    --height: 180px;
+    --border-radius: 10px;
+    background: var(--background);
+    width: var(--width);
+    height: var(--height);
+    /* border: solid 1px #73747742; */
+    padding: 30px;
+    padding-left: 30px !important;
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    padding-left: 0px;
+  }
+  
+  .checklist-talles label {
+    color: var(--text);
+    position: relative;
+    cursor: pointer;
+    /* display: grid; */
+    align-items: center;
+    width: fit-content;
+    transition: color 0.3s ease;
+    margin-right: 20px;
+    display: flex;
+
+  }
+  
+  .checklist-talles label::before, .checklist-talles label::after {
+    content: "";
+    position: absolute;
+  }
+  
+  .checklist-talles label::before {
+    height: 2px;
+    width: 8px;
+    left: -27px;
+    background: var(--check);
+    border-radius: 2px;
+    transition: background 0.3s ease;
+  }
+  
+  .checklist-talles label:after {
+    height: 4px;
+    width: 4px;
+    top: 8px;
+    left: -25px;
+    border-radius: 50%;
+  }
+  
+  .checklist-talles input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    outline: none;
+    border: 0;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    background: var(--background);
+    display: grid;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .checklist-talles input[type="checkbox"]::before, .checklist-talles input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    top: auto;
+    background: var(--check);
+    border-radius: 2px;
+  }
+  
+  .checklist-talles input[type="checkbox"]::before {
+    width: 0px;
+    right: 60%;
+    transform-origin: right bottom;
+  }
+  
+  .checklist-talles input[type="checkbox"]::after {
+    width: 0px;
+    left: 40%;
+    transform-origin: left bottom;
+  }
+  
+  .checklist-talles input[type="checkbox"]:checked::before {
+    animation: check-01 0.4s ease forwards;
+  }
+  
+  .checklist-talles input[type="checkbox"]:checked::after {
+    animation: check-02 0.4s ease forwards;
+  }
+  
+  .checklist-talles input[type="checkbox"]:checked + label {
+    color: var(--disabled);
+    
+  }
+  
+  .checklist-talles input[type="checkbox"]:checked + label::before {
+    background: transparent;
+    animation: slice 0.4s ease forwards;
+  }
+  
+  .checklist-talles input[type="checkbox"]:checked + label::after {
+    animation: firework 0.5s ease forwards 0.1s;
+  }
+  
+  /* ****** CHECKLIST COLORS ********/
+  .checklist-colors{
+    --background: #f2f2f256;
+    --text: #5d6474;
+    --check: #7c0717;
+    --disabled: #d3c8de;
+    --width: 100%;
+    --height: 300px;
+    --border-radius: 10px;
+    background: var(--background);
+    width: var(--width);
+    height: var(--height);
+    /* border: solid 1px #73747742; */
+    padding-left: 30px !important;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    padding-left: 0px;
+  }
+  
+  .checklist-colors label {
+    color: var(--text);
+    position: relative;
+    cursor: pointer;
+    /* display: grid; */
+    align-items: center;
+    width: fit-content;
+    transition: color 0.3s ease;
+    margin-right: 20px;
+    display: flex;
+
+  }
+  
+  .checklist-colors label::before, .checklist-colors label::after {
+    content: "";
+    position: absolute;
+  }
+  
+  .checklist-colors label::before {
+    height: 2px;
+    width: 8px;
+    left: -27px;
+    background: var(--check);
+    border-radius: 2px;
+    transition: background 0.3s ease;
+  }
+  
+  .checklist-colors label:after {
+    height: 4px;
+    width: 4px;
+    top: 8px;
+    left: -25px;
+    border-radius: 50%;
+  }
+  
+  .checklist-colors input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    outline: none;
+    border: 0;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    background: var(--background);
+    display: grid;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .checklist-colors input[type="checkbox"]::before, .checklist-colors input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    top: auto;
+    background: var(--check);
+    border-radius: 2px;
+  }
+  
+  .checklist-colors input[type="checkbox"]::before {
+    width: 0px;
+    right: 60%;
+    transform-origin: right bottom;
+  }
+  
+  .checklist-colors input[type="checkbox"]::after {
+    width: 0px;
+    left: 40%;
+    transform-origin: left bottom;
+  }
+  
+  .checklist-colors input[type="checkbox"]:checked::before {
+    animation: check-01 0.4s ease forwards;
+  }
+  
+  .checklist-colors input[type="checkbox"]:checked::after {
+    animation: check-02 0.4s ease forwards;
+  }
+  
+  .checklist-colors input[type="checkbox"]:checked + label {
+    color: var(--disabled);
+    
+  }
+  
+  .checklist-colors input[type="checkbox"]:checked + label::before {
+    background: transparent;
+    animation: slice 0.4s ease forwards;
+  }
+  
+  .checklist-colors input[type="checkbox"]:checked + label::after {
+    animation: firework 0.5s ease forwards 0.1s;
+  }
+
+  /* ****** CHECKLIST MANGA ********/
+  .checklist-sleeve{
+    --background: #f2f2f256;
+    --text: #5d6474;
+    --check: #7c0717;
+    --disabled: #d3c8de;
+    --width: 100%;
+    --height: 140px;
+    --border-radius: 10px;
+    background: var(--background);
+    width: var(--width);
+    height: var(--height);
+    /* border: solid 1px #73747742; */
+    padding-left: 30px !important;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    padding-left: 0px;
+  }
+  
+  .checklist-sleeve label {
+    color: var(--text);
+    position: relative;
+    cursor: pointer;
+    /* display: grid; */
+    align-items: center;
+    width: fit-content;
+    transition: color 0.3s ease;
+    margin-right: 20px;
+    display: flex;
+
+  }
+  
+  .checklist-sleeve label::before, .checklist-sleeve label::after {
+    content: "";
+    position: absolute;
+  }
+  
+  .checklist-sleeve label::before {
+    height: 2px;
+    width: 8px;
+    left: -27px;
+    background: var(--check);
+    border-radius: 2px;
+    transition: background 0.3s ease;
+  }
+  
+  .checklist-sleeve label:after {
+    height: 4px;
+    width: 4px;
+    top: 8px;
+    left: -25px;
+    border-radius: 50%;
+  }
+  
+  .checklist-sleeve input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    outline: none;
+    border: 0;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    background: var(--background);
+    display: grid;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .checklist-sleeve input[type="checkbox"]::before, .checklist-sleeve input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    top: auto;
+    background: var(--check);
+    border-radius: 2px;
+  }
+  
+  .checklist-sleeve input[type="checkbox"]::before {
+    width: 0px;
+    right: 60%;
+    transform-origin: right bottom;
+  }
+  
+  .checklist-sleeve input[type="checkbox"]::after {
+    width: 0px;
+    left: 40%;
+    transform-origin: left bottom;
+  }
+  
+  .checklist-sleeve input[type="checkbox"]:checked::before {
+    animation: check-01 0.4s ease forwards;
+  }
+  
+  .checklist-sleeve input[type="checkbox"]:checked::after {
+    animation: check-02 0.4s ease forwards;
+  }
+  
+  .checklist-sleeve input[type="checkbox"]:checked + label {
+    color: var(--disabled);
+    
+  }
+  
+  .checklist-sleeve input[type="checkbox"]:checked + label::before {
+    background: transparent;
+    animation: slice 0.4s ease forwards;
+  }
+  
+  .checklist-sleeve input[type="checkbox"]:checked + label::after {
+    animation: firework 0.5s ease forwards 0.1s;
+  }
+
+
+  @keyframes move {
+    50% {
+      padding-left: 8px;
+      padding-right: 0px;
+    }
+  
+    100% {
+      padding-right: 4px;
+    }
+  }
+  
+  @keyframes slice {
+    60% {
+      width: 100%;
+      left: 4px;
+    }
+  
+    100% {
+      width: 100%;
+      left: -2px;
+      padding-left: 0;
+    }
+  }
+  
+  @keyframes check-01 {
+    0% {
+      width: 4px;
+      top: auto;
+      transform: rotate(0);
+    }
+  
+    50% {
+      width: 0px;
+      top: auto;
+      transform: rotate(0);
+    }
+  
+    51% {
+      width: 0px;
+      top: 8px;
+      transform: rotate(45deg);
+    }
+  
+    100% {
+      width: 5px;
+      top: 8px;
+      transform: rotate(45deg);
+    }
+  }
+  
+  @keyframes check-02 {
+    0% {
+      width: 4px;
+      top: auto;
+      transform: rotate(0);
+    }
+  
+    50% {
+      width: 0px;
+      top: auto;
+      transform: rotate(0);
+    }
+  
+    51% {
+      width: 0px;
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+  
+    100% {
+      width: 10px;
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+  }
+  
+  @keyframes firework {
+    0% {
+      opacity: 1;
+      box-shadow: 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0;
+    }
+  
+    30% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      box-shadow: 0 -15px 0 0px #4f29f0, 14px -8px 0 0px #4f29f0, 14px 8px 0 0px #4f29f0, 0 15px 0 0px #4f29f0, -14px 8px 0 0px #4f29f0, -14px -8px 0 0px #4f29f0;
+    }
+  }

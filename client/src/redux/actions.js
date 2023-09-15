@@ -1,4 +1,5 @@
-import { ORDER, 
+import { 
+  CHANGE_ORDER, 
   FILTER, 
   HANDLE_NUMBER,
   PREV_PAGE,
@@ -33,12 +34,12 @@ export const filterCards = (filter) => {
     };
 }
 
-export const orderCards = (order) => {
-    return { 
-        type: ORDER, 
-        payload: order 
+export function changeOrder(order) {
+    return {
+      type: CHANGE_ORDER,
+      payload: order,
     };
-}
+  }
 
 export const loadData = (data) => ({
     type: LOAD_DATA,

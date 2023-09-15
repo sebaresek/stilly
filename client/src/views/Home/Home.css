@@ -4,6 +4,7 @@
     margin-top: 1.5rem;
     width: 100%;
     align-items: center;
+    padding-bottom: 4rem;
 }
 
 .button-cardsmen{
@@ -42,4 +43,20 @@
     align-items: center;
     font-size: 21px;
     line-height: 1;
+}
+
+.container-cards-home{
+    padding-top: 4em;
+    padding-bottom: 4rem;
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    margin: 0;
+    font-family: sans-serif;
+    background: #f2f2f256;
 }
