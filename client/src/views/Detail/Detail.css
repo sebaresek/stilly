@@ -1,0 +1,184 @@
+.container-detail {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos en una fila horizontal */
+    align-items: center; /* Centra verticalmente los elementos en el contenedor */
+    margin-bottom: 4rem;
+    font-family: Montserrat,sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .container-detail-img {
+    width: 40%;
+    height: auto;
+    padding: 2px; 
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid #73747742;
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+
+.container-name-price{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4rem;
+    align-items: center;
+    text-align: center;
+    margin-left: 1rem;
+}
+  
+.container-detail-info {
+    flex: .9;
+    padding: 20px;
+    margin-left: 3rem;
+    margin-top: 3rem;
+    align-self: flex-start; /* Alinea el elemento en la parte superior */
+}
+
+.container-detail-info-2{
+    border: 1px solid #73747742;
+    border-radius: 8px;
+    
+}
+
+.container-detail-price{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 16px;
+}
+  
+
+.container-detail-button {
+    margin-top: 2rem;
+    text-align: left;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+  
+.container-detail-name{
+    justify-content: center;
+    text-align: left;
+    font-size: 26px;
+}
+
+.container-detail-description{
+    margin-top: 1rem;
+    text-align: left;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.container-detail-color{
+    margin-top: 1rem;
+    text-align: left;
+    margin-left: 1rem;
+}
+
+.container-detail-sizes{
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.container-detail-sizes ul{
+    margin-left: -3px;
+    zoom: 1;
+    clear: both;
+    /* -webkit-transform: translateZ(0px); */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.container-detail-sizes li{
+    float: left;
+    zoom: 1;
+    margin: 0 0 0 3px;
+    box-sizing: border-box;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.container-span-size{
+    border: 1px solid #fff;
+    margin: 0;
+    white-space: nowrap;
+    background: #f4f4f4;
+    height: 32px;
+    min-width: 35px;
+    line-height: 32px;
+    display: block;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    color: #636363;
+    text-decoration: none;
+    box-sizing: content-box;
+    transition: box-shadow .25s ease-out,background-color .2s ease-out;
+}
+
+.button-add-cart{
+    border-color: transparent;
+    color: #e0e2e2;
+    background-color: #424242;
+    box-shadow: 0 0 0 0 #fff;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 20px;
+}
+
+.button-add-cart:hover {
+    border-color: transparent;
+    background-color: #363636;
+    color: #fff;
+    transition: box-shadow .25s ease-out,background-color .2s ease-out;
+}
+  
+.button-add-cart .icon {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.custom-carousel-detail .carousel .control-dots {
+    position: absolute;
+    bottom: 0px; 
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1; 
+    color: #000;
+  }
+
+.custom-carousel-detail .carousel .control-dots .dot {
+    background-color: rgb(94, 94, 94); /* Cambia el fondo a negro */
+    color: rgb(94, 94, 94) !important; /* Cambia el color del texto a blanco */
+}
+
+.carousel .control-prev {
+    background-color: transparent;
+    border: none;
+    color: #000 !important; 
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+  
+.carousel .control-next {
+    background-color: transparent ;
+    border: none;
+    color: #000 !important; 
+    /* border-radius: 10px; */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}

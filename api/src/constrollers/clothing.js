@@ -28,7 +28,7 @@ const searchClothingByName = async (req, res) => {
 
 
 
-const getClothingById = async (req, res) => {
+const getClothingByIdd = async (req, res) => {
   const { id } = req.params; 
   try {
     const clothing = await Clothing.findByPk(id);
@@ -158,6 +158,42 @@ const deletedClothing = async (req, res) => {
     }
   };
 
+
+const getSizesClothing = async (req, res) => {
+    try {
+        const { name } = req.params;
+
+        if (!name) {
+            return res.status(400).json({ message: 'El parámetros name es requeridos.' });
+        }
+        const lowercaseName = name.toLowerCase();
+        const clothingItems = await Clothing.findAll({
+            where: { name: lowercaseName, },
+            attributes: ['id', 'waist', 'color'] 
+        });
+
+        if (clothingItems.length === 0) {
+            return res.status(404).json({ message: 'No se encontraron talles o color para esta prenda.' });
+        }
+        const sizesWithIds = clothingItems.map((item) => ({
+          id: item.id,
+          waist: item.waist ? item.waist.split(',') : [],
+          color: item.color ? item.color.split(',') : [] 
+        }));   
+        const allSizes = sizesWithIds.reduce((accumulator, currentValue) => accumulator.concat(currentValue), []);
+        res.status(200).json(allSizes);
+    } catch (error) {
+        console.error('Error al obtener talles:', error);
+        res.status(500).json({ message: 'Error al obtener talles.' });
+    }
+}
+
+
+  
+  module.exports = getSizesClothing;
+  
+
+
   module.exports = {
     getClothings,
     createClothing,
@@ -166,7 +202,7 @@ const deletedClothing = async (req, res) => {
     getClothingByFemale,
     getClothingByaccessories,
     getClothingOffer,
-    // todavia no ocupe estos 2
     searchClothingByName,
-    getClothingById,
+    getClothingByIdd,
+    getSizesClothing
   }

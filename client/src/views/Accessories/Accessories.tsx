@@ -1,7 +1,8 @@
 import { Card } from "../../components/Card/Card";
 import { Filter } from '../../components/Filters/FilterCaps'
 import { Loader } from '../../components/Loader/Loader';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadData } from "../../redux/actions";
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import React from 'react';
@@ -27,6 +28,7 @@ export const Accessories = () => {
     const [characters, setCharacters] = useState<ClothingItem[]>([]);
     const filteredColor = useSelector((state: any) => state.filteredColor);
     const filteredCard = useSelector((state: any) => state.filteredCard);
+    const dispatch = useDispatch()
     
     useEffect(() => {
         // Realiza una solicitud para obtener los datos de tu base de datos aquí
@@ -35,6 +37,7 @@ export const Accessories = () => {
             .then(response => {
                 console.log(response.data)
                 setCharacters(response.data);
+                dispatch(loadData(response.data))
             })
             .catch(error => {
                 console.error('Error al obtener datos:', error);

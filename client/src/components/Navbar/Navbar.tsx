@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { loadData } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 
@@ -13,6 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({isLoggedIn}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate(); 
+  const dispatch = useDispatch();
 
 
 
@@ -27,6 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({isLoggedIn}) => {
         console.log('No se encontraron prendas con ese nombre.');
       } else {
         console.log('::::::::::::::::', searchData)
+        dispatch(loadData(response.data));
         // Navega a la página de resultados y pasa los resultados como estado
         navigate('/results', { state: { results: searchData } });
       }

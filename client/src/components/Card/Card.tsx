@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Card.css';
@@ -21,6 +22,7 @@ interface ClothingItem {
 export const Card = (props: ClothingItem) => {
   const imageUrls = props.image.split(',').map((imageUrl) => imageUrl.trim());
   const cardClass = `container-card${props.offer ? ' offer' : ''}`;
+  const navigate = useNavigate()
 
   return (
     <div className={cardClass}>
@@ -52,7 +54,7 @@ export const Card = (props: ClothingItem) => {
         
 
         <div className="container-button-card">
-          <button className="button-card">VER DETALLES</button>
+          <button onClick={() => navigate(`/detail/${props.id}`)} className="button-card">VER DETALLES</button>
         </div>
 
         <span> </span>

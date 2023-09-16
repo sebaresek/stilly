@@ -27,6 +27,7 @@ import { DiversAndJacketsWomen } from './views/Women/DiversAndJackets/DiversAndJ
 import { ShortAndPantsWomen } from './views/Women/ShortAndPants/ShortAndPants';
 import { TShirtAndMuscleWomen } from './views/Women/T-shirtAndMuscle/TShirtAndMuscle';
 import { ResultsPage } from './views/Results/Results'
+import { Detail } from './views/Detail/Detail';
 import './App.css';
 
 
@@ -105,6 +106,11 @@ function App() {
 
         {/* UBICACION */}
         <Route path='/location' element={<Location />} /> 
+
+        {/* DETAIL */}
+        <Route path='/detail/:id' element={<Detail />} /> 
+        <Route path="/detail/:id/:size" element={<Detail />} />
+
       </Routes>
 
       {location.pathname !== '/login'  
