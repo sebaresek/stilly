@@ -446,3 +446,15 @@
     justify-content: space-between;
     display: flex;
 }
+
+.cart-count {
+    background-color: rgb(95, 95, 95); /* Cambia el color de fondo del número */
+    color: white; /* Cambia el color del texto del número */
+    border-radius: 50%; /* Agrega bordes redondeados para que sea un círculo */
+    padding: 0px 5px; /* Ajusta el espacio interior para el número */
+    font-size: 14px; /* Cambia el tamaño de fuente del número */
+    position: absolute; /* Permite ajustar la posición del número */
+    right: -1px; /* Ajusta la posición horizontal del número */
+    bottom: 30px;
+  }
+  

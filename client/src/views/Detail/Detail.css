@@ -11,11 +11,11 @@
   .container-detail-img {
     width: 40%;
     height: auto;
-    padding: 2px; 
+    padding: 3px 0 0px 0; 
     border-radius: 8px;
     background: transparent;
     border: 1px solid #73747742;
-    margin-left: 2rem;
+    margin-left: 3rem;
     margin-top: 2rem;
   }
 
@@ -30,7 +30,7 @@
 }
   
 .container-detail-info {
-    flex: .9;
+    width: 45%;
     padding: 20px;
     margin-left: 3rem;
     margin-top: 3rem;
@@ -52,9 +52,13 @@
   
 
 .container-detail-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-top: 2rem;
+    padding-right: 2rem;
     text-align: left;
-    margin-left: 1rem;
+    padding-left: 1rem;
     margin-bottom: 1rem;
 }
   
@@ -83,11 +87,11 @@
     margin-left: 1rem;
 }
 
+
 .container-detail-sizes ul{
     margin-left: -3px;
     zoom: 1;
     clear: both;
-    /* -webkit-transform: translateZ(0px); */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -107,7 +111,10 @@
     text-align: -webkit-match-parent;
 }
 
-.container-span-size{
+.container-span-size {
+    /* Estilos por defecto */
+    width: auto;
+    padding: 0 4px 0 4px;
     border: 1px solid #fff;
     margin: 0;
     white-space: nowrap;
@@ -122,12 +129,20 @@
     color: #636363;
     text-decoration: none;
     box-sizing: content-box;
-    transition: box-shadow .25s ease-out,background-color .2s ease-out;
-}
+    transition: box-shadow .25s ease-out, background-color .2s ease-out;
+  }
+  
+  .container-span-size.selected {
+    /* Estilos cuando el elemento está seleccionado */
+    border: 1px solid #050505; /* Puedes cambiar esto al color de borde que desees */
+    box-shadow: 0 0 5px rgba(46, 46, 46, 0.5); /* Agregar sombra al hacer clic */
+    background: #f4f4f4; /* Cambiar el fondo al hacer clic */
+    color: #636363; /* Cambiar el color de texto al hacer clic */
+  }
 
 .button-add-cart{
     border-color: transparent;
-    color: #e0e2e2;
+    color: #ffffffec;
     background-color: #424242;
     box-shadow: 0 0 0 0 #fff;
     cursor: pointer;
@@ -149,6 +164,31 @@
 .button-add-cart .icon {
     font-size: 20px;
     margin-left: 5px;
+}
+
+.button-reset-detail{
+    display: flex;
+    background-color: #424242;
+    color: #ffffffec;
+    box-shadow: 0 0 0 0 #fff;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.button-reset-detail .icon {
+    font-size: 20px;
+    margin-left: 5px;
+    margin-bottom: .2rem;
+}
+
+.button-reset-detail:hover {
+    border-color: transparent;
+    background-color: #363636;
+    color: #fff;
+    transition: box-shadow .25s ease-out,background-color .2s ease-out;
 }
 
 .custom-carousel-detail .carousel .control-dots {
@@ -182,3 +222,64 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+
+.container-detail-color{
+    display: flex;
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+}
+
+.container-detail-color ul{
+    margin-left: -3px;
+    zoom: 1;
+    clear: both;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.container-detail-color li{
+    float: left;
+    zoom: 1;
+    margin: 0 0 0 3px;
+    box-sizing: border-box;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.container-span-color {
+    width: auto;
+    padding: 0 4px 0 4px;
+    border: 1px solid #fff;
+    margin: 0;
+    white-space: nowrap;
+    background: #f4f4f4;
+    height: 32px;
+    min-width: 35px;
+    line-height: 32px;
+    display: block;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    color: #636363;
+    text-decoration: none;
+    box-sizing: content-box;
+    transition: box-shadow .25s ease-out, background-color .2s ease-out;
+  }
+  
+  .container-span-color.selected {
+    border: 1px solid #050505; /* Puedes cambiar esto al color de borde que desees */
+    box-shadow: 0 0 5px rgba(46, 46, 46, 0.5); /* Agregar sombra al hacer clic */
+    background: #f4f4f4; /* Cambiar el fondo al hacer clic */
+    color: #636363; /* Cambiar el color de texto al hacer clic */
+  }
+  
+.container-reset-button-detail{
+    display: flex;
+}
+

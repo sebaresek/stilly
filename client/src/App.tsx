@@ -28,20 +28,35 @@ import { ShortAndPantsWomen } from './views/Women/ShortAndPants/ShortAndPants';
 import { TShirtAndMuscleWomen } from './views/Women/T-shirtAndMuscle/TShirtAndMuscle';
 import { ResultsPage } from './views/Results/Results'
 import { Detail } from './views/Detail/Detail';
+import { Cart } from './views/Cart/Cart';
 import './App.css';
 
-
+interface ClothingItem {
+  id: number;
+  name: string;
+  description: string;
+  gender: string;
+  category: string;
+  price: string;
+  waist: string;
+  color: string;
+  sleeve: string;
+  offer: boolean;
+  image: string;
+}
 
 
 function App() {
   const location = useLocation()
   const [isLoggedIn, setIsLoggedIn] =  useState<boolean>(false);
+  const [cart, setCart] = useState<ClothingItem[]>([]); 
+  const [total, setTotal] = useState(0);
+  const [countProducts, setCountProducts] = useState(0);
 
   // const handleLogout = () => {
   //   setIsLoggedIn(false);
   //   localStorage.removeItem("isLoggedIn");
   // };
-
   useEffect(() => {
     // Verificar si el usuario está autenticado en localStorage
     const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
@@ -61,7 +76,7 @@ function App() {
        ? (
         <div>
           <Promotions/>
-          <Navbar isLoggedIn={isLoggedIn}/>
+          <Navbar isLoggedIn={isLoggedIn} cart={cart || []} setCart={setCart} />
         </div> 
       ) : null}
       
@@ -108,8 +123,10 @@ function App() {
         <Route path='/location' element={<Location />} /> 
 
         {/* DETAIL */}
-        <Route path='/detail/:id' element={<Detail />} /> 
-        <Route path="/detail/:id/:size" element={<Detail />} />
+        <Route path='/detail/:id' element={<Detail cart={cart} setCart={setCart} />} /> 
+
+        {/* UBICACION */}
+        <Route path='/carrito' element={<Cart setCart={setCart} />} /> 
 
       </Routes>
 

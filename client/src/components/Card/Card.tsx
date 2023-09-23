@@ -17,6 +17,7 @@ interface ClothingItem {
   image: string;
   offer: boolean;
   description: string;
+  children?: React.ReactNode; // Agrega la prop children
 }
 
 export const Card = (props: ClothingItem) => {

@@ -6,16 +6,43 @@ import { loadData } from '../../redux/actions';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 
+interface ClothingItem {
+  id: number;
+  name: string;
+  description: string;
+  gender: string;
+  category: string;
+  price: string;
+  waist: string;
+  color: string;
+  sleeve: string;
+  offer: boolean;
+  image: string;
+}
 
 interface NavbarProps {
   isLoggedIn: boolean;
+  cart?: ClothingItem[]; // Agregar 'cart' como una propiedad opcional
+  setCart: React.Dispatch<React.SetStateAction<ClothingItem[]>>;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({isLoggedIn}) => {
+export const Navbar: React.FC<NavbarProps> = ({isLoggedIn, cart, setCart }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate(); 
   const dispatch = useDispatch();
+
+
+
+  useEffect(() => {
+    // Obtener el carrito desde el localStorage
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      const parsedCart: ClothingItem[] = JSON.parse(storedCart);
+      // Guardar el carrito en el estado
+      setCart(parsedCart);
+    }
+  }, []);
 
 
 
@@ -95,7 +122,6 @@ export const Navbar: React.FC<NavbarProps> = ({isLoggedIn}) => {
                     <span className='container-span-navbar'>
                       <div className='container-span-navbar-2'>
                         <button className='searchbar-button' type='button'>
-                          {/* ... AGREGAR FUNCIONABILIDAD EN EL SEARCH ... */}
                         </button>
                       </div>
                     </span>
@@ -132,17 +158,18 @@ export const Navbar: React.FC<NavbarProps> = ({isLoggedIn}) => {
                 </div>
 
                 <div className='mipedido-navbar'>
-                    <div className='mipedido-navbar-2'>
-                      <button className='mipedido-navbar-button'>
-                        <div className='mipedido-navbar-button-div'>
-                          <span className='mipedido-navbar-button-span'>
-                            MI PEDIDO
-                            {/* ... AGREGAR FUNCIONABILIDAD EN MI PEDIDO... */}
-                          </span>
-                        </div>
-                      </button>
-                    </div>
+                  <div className='mipedido-navbar-2'>
+                    <Link to="/carrito" className='mipedido-navbar-button'>
+                      <div className='mipedido-navbar-button-div'>
+                        <span className='mipedido-navbar-button-span'>
+                          MI PEDIDO
+                          {cart && cart.length > 0 && <div className='cart-count'>{cart.length}</div>}
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
+
 
               </div>
             </section>

@@ -159,34 +159,34 @@ const deletedClothing = async (req, res) => {
   };
 
 
-const getSizesClothing = async (req, res) => {
+  const getSizesClothing = async (req, res) => {
     try {
-        const { name } = req.params;
-
-        if (!name) {
-            return res.status(400).json({ message: 'El parámetros name es requeridos.' });
-        }
-        const lowercaseName = name.toLowerCase();
-        const clothingItems = await Clothing.findAll({
-            where: { name: lowercaseName, },
-            attributes: ['id', 'waist', 'color'] 
-        });
-
-        if (clothingItems.length === 0) {
-            return res.status(404).json({ message: 'No se encontraron talles o color para esta prenda.' });
-        }
-        const sizesWithIds = clothingItems.map((item) => ({
-          id: item.id,
-          waist: item.waist ? item.waist.split(',') : [],
-          color: item.color ? item.color.split(',') : [] 
-        }));   
-        const allSizes = sizesWithIds.reduce((accumulator, currentValue) => accumulator.concat(currentValue), []);
-        res.status(200).json(allSizes);
+      const { name } = req.params;
+  
+      if (!name) {
+        return res.status(400).json({ message: 'El parámetro name es requerido.' });
+      }
+      
+      const lowercaseName = name.toLowerCase();
+      
+      const clothingItems = await Clothing.findAll({
+        where: { name: lowercaseName },
+        attributes: ['id', 'waist', 'color'],
+      });
+  
+      const sizesWithIds = clothingItems.map((item) => ({
+        id: item.id,
+        waist: item.waist,
+        color: item.color,
+      }));
+      
+      res.status(200).json(sizesWithIds);
     } catch (error) {
-        console.error('Error al obtener talles:', error);
-        res.status(500).json({ message: 'Error al obtener talles.' });
+      console.error('Error al obtener talles:', error);
+      res.status(500).json({ message: 'Error al obtener talles.' });
     }
-}
+  }
+  
 
 
   
