@@ -126,7 +126,7 @@ function App() {
         <Route path='/detail/:id' element={<Detail cart={cart} setCart={setCart} />} /> 
 
         {/* UBICACION */}
-        <Route path='/carrito' element={<Cart setCart={setCart} />} /> 
+        <Route path='/carrito' element={<Cart isLoggedIn={isLoggedIn} setCart={setCart} />} /> 
 
       </Routes>
 

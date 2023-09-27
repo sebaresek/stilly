@@ -384,7 +384,7 @@ export const MyAccount = () => {
                                 </p>
                             </div>
 
-                            <div className='container-micuenta-divs'>
+                            {/* <div className='container-micuenta-divs'>
                                 <p className='micuenta-p'>Mis Compras:
                                     <button
                                         className='button-micuenta-flecha'
@@ -393,7 +393,7 @@ export const MyAccount = () => {
                                     </button>
                                 </p>
 
-                            </div>
+                            </div> */}
 
                     </div>
                 ) : (

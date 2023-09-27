@@ -13,7 +13,6 @@ server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' })); //Configur
 server.use(bodyParser.json({ limit: '50mb' })); //Configura el servidor para que analice y decodifique datos en formato JSON.
 server.use(cookieParser()); //Configura el servidor para que analice y decodifique cookies.
 server.use(morgan('dev')); //Configura el servidor para que registre solicitudes HTTP en la consola de salida
-
 server.use(express.json());
 
 server.use((req, res, next) => {
