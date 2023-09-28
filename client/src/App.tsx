@@ -29,7 +29,12 @@ import { TShirtAndMuscleWomen } from './views/Women/T-shirtAndMuscle/TShirtAndMu
 import { ResultsPage } from './views/Results/Results'
 import { Detail } from './views/Detail/Detail';
 import { Cart } from './views/Cart/Cart';
+import { Exchanges } from './components/Exchanges/Exchanges';
+import { Faqs } from './components/Faqs/Faqs';
+import { Payments } from './components/Payments/Payments';
 import './App.css';
+import { Shipping } from './components/Shipping/Shipping';
+
 
 interface ClothingItem {
   id: number;
@@ -57,6 +62,7 @@ function App() {
   //   setIsLoggedIn(false);
   //   localStorage.removeItem("isLoggedIn");
   // };
+  
   useEffect(() => {
     // Verificar si el usuario está autenticado en localStorage
     const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
@@ -127,6 +133,18 @@ function App() {
 
         {/* UBICACION */}
         <Route path='/carrito' element={<Cart isLoggedIn={isLoggedIn} setCart={setCart} />} /> 
+
+        {/* CAMBIO Y DEVOLUCIONES */}
+        <Route path='/exchanges' element={<Exchanges />} /> 
+  
+        {/* PREGUNTAS FRECUENTES */}
+        <Route path='/faqs' element={<Faqs />} /> 
+
+        {/* FORMA DE PAGO */}
+        <Route path='/payments' element={<Payments  />} /> 
+
+        {/* FORMA DE ENVIO */}
+        <Route path='/shipping' element={<Shipping />} /> 
 
       </Routes>
 

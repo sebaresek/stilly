@@ -61,6 +61,7 @@
     justify-content: space-between;
     display: flex;
     align-items: center;
+    margin-bottom: 0px;
 }
 
 .micuenta-span{
@@ -95,7 +96,7 @@
     cursor: pointer;
     border-color: transparent;
     background-color: transparent;
-    color: #1f6ee4;
+    color: #474747e3;
     transition: transform 0.2s ease;
     border-radius: 6px;
     font-family: sans-serif;
@@ -112,7 +113,7 @@
 }
 
 .button-micuenta:hover{
-    background-color: #a9c3f086;
+    background-color: #3636368c;
 }
 
 .button-micuenta:active{

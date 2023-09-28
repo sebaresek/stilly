@@ -15,14 +15,14 @@ export const Footer = () => {
                             <p> Preguntas Frecuentes</p>
                         </a>
 
-                        <a href="/returns"> 
+                        <a href="/exchanges"> 
                             <p> Cambio y devoluciones</p>
                         </a>
                     </div>
 
                     <div className="sb__footer-links-div">
                         <h4> RECURSOS  </h4>
-                        <a href="/Payments"> 
+                        <a href="/payments"> 
                             <p> Formas de pago</p>
                         </a>
 
